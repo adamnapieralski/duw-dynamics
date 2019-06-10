@@ -10,11 +10,11 @@ function [] = RysujObrot( plot_type, body, Q, DQ, D2Q, T, timespan )%% Zadanie p
     for time=1:length(T)
 
     %IIrK(1:2,time) = [(3*body-2,time);Y(3*body-1,time)]+RotMat(Y(3*body,time))*rKloc;
-    IIrK(1,time) = Q(3*body,time);
+    IIrK(1,time) = Q(3*body,time)*180/pi;
 
-    IIrdotK(1,time) = DQ(3*body,time);
+    IIrdotK(1,time) = DQ(3*body,time)*180/pi;
 
-    IIrddotK(1,time) = D2Q(3*body,time);
+    IIrddotK(1,time) = D2Q(3*body,time)*180/pi;
     end
 
     %% Rysowanie wykresów 
